@@ -1,3 +1,3 @@
 # GroupTableView
 
-A description of this package.
+A TableView with expandable cells.
