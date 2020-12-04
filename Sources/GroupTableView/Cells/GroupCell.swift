@@ -8,25 +8,25 @@
 import UIKit
 import SwiftUIKit
 
-class GroupCell: TableViewCell {
-    static var updateHandler: ((GroupCellData, Int) -> Void)?
+public class GroupCell: TableViewCell {
+    public static var updateHandler: ((GroupCellData, Int) -> Void)?
     
-    var cellIcon = Image("ic_star")
+    public var cellIcon = Image("ic_star")
         .contentMode(.scaleAspectFit)
         .templateImage()
         .tint(color: .systemRed)
-    var label = Label("")
-    var arrowImage = Image("ic_arrow")
+    public var label = Label("")
+    public var arrowImage = Image("ic_arrow")
         .contentMode(.scaleAspectFit)
         .templateImage()
         .tint(color: .systemRed)
     
-    var selectedLabel = Label("X/Y Selected")
+    public var selectedLabel = Label("X/Y Selected")
     
-    var tableView = TableView().register(cells: [GroupSelectAllCell.self, GroupSelectionCell.self])
-    var innerView = UIView()
+    public var tableView = TableView().register(cells: [GroupSelectAllCell.self, GroupSelectionCell.self])
+    public var innerView = UIView()
     
-    func configure(forData data: CellDisplayable) {
+    public func configure(forData data: CellDisplayable) {
         guard let data = data as? GroupCellData else {
             return
         }
@@ -62,7 +62,7 @@ class GroupCell: TableViewCell {
         update(forData: data)
     }
     
-    func update(forData data: CellDisplayable) {
+    public func update(forData data: CellDisplayable) {
         guard let data = data as? GroupCellData else {
             return
         }
@@ -98,7 +98,7 @@ class GroupCell: TableViewCell {
         }
     }
     
-    static var ID: String {
+    public static var ID: String {
         "group"
     }
 }

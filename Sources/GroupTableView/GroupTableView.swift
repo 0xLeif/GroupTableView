@@ -8,13 +8,13 @@
 import UIKit
 import SwiftUIKit
 
-enum GroupCellType {
+public enum GroupCellType {
     case group(cell: GroupCellData)
     case selection(cell: GroupSelectionCellData)
 }
 
-class GroupTableView: UIView {
-    var items: [GroupCellType] = [
+public class GroupTableView: UIView {
+    public var items: [GroupCellType] = [
         .group(cell: GroupCellData(id: "f01", title: "Football", items: [GroupSelectionCellData(id: "", title: "First and Only")])),
         .group(cell: GroupCellData(id: "f02", title: "Football", items: [
             GroupSelectionCellData(id: "", title: "First"),
@@ -65,7 +65,7 @@ class GroupTableView: UIView {
     
     private var tableView = TableView()
     
-    init() {
+    public init() {
         super.init(frame: .zero)
         
         GroupCell.updateHandler = { [weak self] (data, itemIndex) in
@@ -90,7 +90,7 @@ class GroupTableView: UIView {
         }
     }
     
-    func handle(didSelectRowAtIndexPath indexPath: IndexPath) {
+    public func handle(didSelectRowAtIndexPath indexPath: IndexPath) {
         let selectedItem = items[indexPath.row]
         
         switch selectedItem {
@@ -113,7 +113,7 @@ class GroupTableView: UIView {
             .reloadRows(at: [indexPath], with: .automatic)
     }
     
-    func handle(groupCell: GroupCellData, row: Int) {
+    public func handle(groupCell: GroupCellData, row: Int) {
         guard row > 0 else {
             print("This should select/ deselect all options under this group")
             

@@ -8,18 +8,18 @@
 import UIKit
 import SwiftUIKit
 
-class GroupSelectionCell: TableViewCell {
-    var cellIcon = Image("ic_star")
+public class GroupSelectionCell: TableViewCell {
+    public var cellIcon = Image("ic_star")
         .contentMode(.scaleAspectFit)
         .templateImage()
         .tint(color: .systemRed)
-    var label = Label("")
-    var checkMarkImage = Image("ic_check")
+    public var label = Label("")
+    public var checkMarkImage = Image("ic_check")
         .contentMode(.scaleAspectFill)
         .templateImage()
         .tint(color: .systemRed)
     
-    func configure(forData data: CellDisplayable) {
+    public func configure(forData data: CellDisplayable) {
         guard data is GroupSelectionCellData else {
             return
         }
@@ -39,7 +39,7 @@ class GroupSelectionCell: TableViewCell {
             .frame(height: 60)
     }
     
-    func update(forData data: CellDisplayable) {
+    public func update(forData data: CellDisplayable) {
         guard let data = data as? GroupSelectionCellData else {
             return
         }
@@ -53,7 +53,7 @@ class GroupSelectionCell: TableViewCell {
         }
     }
     
-    static var ID: String {
+    public static var ID: String {
         "selection"
     }
 }

@@ -8,10 +8,10 @@
 import UIKit
 import SwiftUIKit
 
-class GroupSelectAllCell: TableViewCell {
-    var label = Label.headline("")
+public class GroupSelectAllCell: TableViewCell {
+    public var label = Label.headline("")
     
-    func configure(forData data: CellDisplayable) {
+    public func configure(forData data: CellDisplayable) {
         
         selectionStyle = .none
         
@@ -21,7 +21,7 @@ class GroupSelectAllCell: TableViewCell {
         
     }
     
-    func update(forData data: CellDisplayable) {
+    public func update(forData data: CellDisplayable) {
         guard let data = data as? GroupSelectAllCellData else {
             return
         }
@@ -29,7 +29,7 @@ class GroupSelectAllCell: TableViewCell {
         label.text = (data.isSelected ? "DESELECT" : "SELECT") + data.title
     }
     
-    static var ID: String {
+    public static var ID: String {
         "selectAll"
     }
 }

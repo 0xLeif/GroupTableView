@@ -7,24 +7,24 @@
 
 import SwiftUIKit
 
-struct GroupCellData: CellDisplayable {
-    var cellID: String {
+public struct GroupCellData: CellDisplayable {
+    public var cellID: String {
         GroupCell.ID
     }
     
-    var id: String
+    public var id: String
     
-    var title: String
-    var items: [GroupSelectionCellData] = []
-    var isExpanded: Bool = false
+    public var title: String
+    public  var items: [GroupSelectionCellData] = []
+    public var isExpanded: Bool = false
     
-    var selectAllCell: GroupSelectAllCellData {
+    public var selectAllCell: GroupSelectAllCellData {
         GroupSelectAllCellData(groupID: id,
                                title: " ALL \(title.uppercased()) TEAMS",
                                isSelected: items.filter(\.isSelected).count == items.count)
     }
     
-    init(
+    public init(
         id: String,
         title: String,
         items: [GroupSelectionCellData] = [],

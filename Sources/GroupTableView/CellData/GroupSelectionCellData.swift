@@ -7,14 +7,26 @@
 
 import SwiftUIKit
 
-struct GroupSelectionCellData: CellDisplayable {
-    var cellID: String {
+public struct GroupSelectionCellData: CellDisplayable {
+    public var cellID: String {
         GroupSelectionCell.ID
     }
     
-    var id: String
+    public var id: String
     
-    var title: String
-    var iconURL: String? = nil
-    var isSelected: Bool = false
+    public var title: String
+    public var iconURL: String? = nil
+    public var isSelected: Bool = false
+    
+    public init(
+        id: String,
+        title: String,
+        iconURL: String? = nil,
+        isSelected: Bool = false
+    ) {
+        self.id = id
+        self.title = title
+        self.iconURL = iconURL
+        self.isSelected = isSelected
+    }
 }

@@ -7,13 +7,23 @@
 
 import SwiftUIKit
 
-struct GroupSelectAllCellData: CellDisplayable {
-    var cellID: String {
+public struct GroupSelectAllCellData: CellDisplayable {
+    public var cellID: String {
         GroupSelectAllCell.ID
     }
     
-    var groupID: String
+    public var groupID: String
     
-    var title: String
-    var isSelected: Bool = false
+    public var title: String
+    public var isSelected: Bool = false
+    
+    public init(
+        groupID: String,
+        title: String,
+        isSelected: Bool = false
+    ) {
+        self.groupID = groupID
+        self.title = title
+        self.isSelected = isSelected
+    }
 }
